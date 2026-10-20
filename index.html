@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emission & Noise Monitor</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230E6E6B'/><path d='M7 21h18M10 21v-6h12v6M13 15l2-4h4' stroke='white' stroke-width='2.2' fill='none' stroke-linecap='round'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <aside class="rail">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6"/><path d="M7 21h18M10 21v-6h12v6M13 15l2-4h4"/></svg>
+      <div>
+        <strong>Emission &amp; Noise Monitor</strong>
+        <span>Smart city enforcement</span>
+      </div>
+    </div>
+    <nav aria-label="Main">
+      <a href="#/overview" data-route="overview">Overview</a>
+      <a href="#/live" data-route="live">Live monitor</a>
+      <a href="#/map" data-route="map">Hotspot map</a>
+      <a href="#/vehicles" data-route="vehicles">Vehicles &amp; fines</a>
+      <a href="#/offenders" data-route="offenders">Repeat offenders</a>
+      <a href="#/rules" data-route="rules">Rules &amp; sensors</a>
+      <a href="#/lab" data-route="lab">Query lab</a>
+    </nav>
+    <div class="rail-foot">
+      <span class="db-dot" id="dbDot"></span>
+      <span id="dbStatus">Connecting to MySQL…</span>
+    </div>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <div class="banner" id="banner" hidden></div>
+    <div id="view"></div>
+  </main>
+
+  <aside class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-inner" role="dialog" aria-modal="true" aria-labelledby="drawerTitle">
+      <button class="icon-btn drawer-close" id="drawerClose" aria-label="Close">✕</button>
+      <div id="drawerBody"></div>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
